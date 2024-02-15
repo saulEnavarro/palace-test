@@ -1,16 +1,13 @@
 import * as cdk from 'aws-cdk-lib';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import {FrontWebResources} from "./resources/website-resources";
 
-export class PalacetestStack extends cdk.Stack {
+export class PalacetestStack2 extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+    super(scope, id,props);
 
-    // The code that defines your stack goes here
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'PalacetestQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    new FrontWebResources(this);
   }
 }
